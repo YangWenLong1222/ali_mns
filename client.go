@@ -2,7 +2,7 @@ package ali_mns
 
 import (
 	"crypto/md5"
-	"encoding/base64"
+	// "encoding/base64"
 	"encoding/xml"
 	"fmt"
 	"net/http"
