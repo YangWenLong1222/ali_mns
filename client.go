@@ -138,7 +138,8 @@ func (p *AliMNSClient) Send(method Method, headers map[string]string, message in
 
 	headers[MQ_VERSION] = version
 	headers[CONTENT_TYPE] = "application/xml"
-	headers[CONTENT_MD5] = base64.StdEncoding.EncodeToString([]byte(strMd5))
+	// headers[CONTENT_MD5] = base64.StdEncoding.EncodeToString([]byte(strMd5))
+	headers[CONTENT_MD5] = strMd5
 	headers[DATE] = time.Now().UTC().Format(http.TimeFormat)
 
 	if authHeader, e := p.authorization(method, headers, fmt.Sprintf("/%s", resource)); e != nil {
